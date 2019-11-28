@@ -2,37 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Fornecedor;
 use Illuminate\Http\Request;
+
+use App\Fornecedor;
+
 use App\Http\Requests\FornecedorFormRequest;
-class fornecedorController extends Controller
+
+class FornecedorController extends Controller
 {
-    //
-    public function __construct()
+    public function list(Request $request)
     {
-        $this->middleware('auth');
+        $fornecedores = Fornecedor::query()->orderBy('nome')->get();
+        $mensagem = $request->session()->get('mensagem');
+        return view('fornecedor.list', compact('fornecedores', 'mensagem'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function create()
     {
-        return view('/fornecedor/cadastroFornecedor');
+        return view('fornecedor.create');
     }
-    public function listagem(FornecedorFormRequest $request)
-    {
-        $fornecedor = Fornecedor::query()->orderBy('Nome')->get();
-        $mensagem = $request->session()->get('mensagem');
-        return view('/fornecedor/listaFornecedor', compact('fornecedor', 'mensagem'));
-    }
+
     public function store(FornecedorFormRequest $request)
     {
-        $nome = $request->nome;
         $fornecedor = Fornecedor::create($request->all());
-        $request->session()->flash('mensagem', "Fornecedor {$nome} cadastrado com sucesso");
-        return redirect()->route('listarFornecedores');
+        $request->session()->flash('mensagem', "Fornecedor {$fornecedor->nome} cadastrada com sucesso");
+        return redirect()->route('listar_fornecedores');
+    }
+
+    public function destroy (Request $request)
+    {
+        Fornecedor::destroy($request->id);
+        $request->session()->flash('mensagem', "Fornecedor removida com sucesso");
+        return redirect()->route('listar_fornecedores');
     }
 }

@@ -27,21 +27,35 @@ class FornecedorFormRequest extends FormRequest
     {
         return [
             //
-            'Nome'=> 'required|min:2',
-            'Telefone'=> 'required|min:8',
-            'Endereco'=> 'required|min:4'
+            'nome'=> 'required|min:2',
+            'descricao'=> 'required|min:4',
+            'tipo'=> 'required|min:4'
+            'valorPrevisto'=> 'required|min:1'
+            'valorRecebido'=> 'required|min:1'
+            'data'=> 'required|min:2'
             ];
-
     }
     public function messages()
     {
         return [
-            'Nome.required' => 'O campo nome é obrigatorio',
-            'Nome.min' => 'O campo deve ter no minmo 2 caracteres',
-            'Telefone.required' => 'O campo Descrição é obrigatorio',
-            'Telefone.min' => 'O campo deve ter no minmo 4 caracteres',
-            'Endereco.required' => 'O campo Tipo é obrigatorio',
-            'Endereco.min' => 'O campo deve ter no minmo 2 caracteres',
+            'nome.required' => 'O campo Nome é obrigatorio',
+            'nome.min' => 'O campo Nome deve ter pelo menos 2 caracteres',
+
+            'descricao.required' => 'O campo Descrição é obrigatorio',
+            'descricao.min' => 'O campo Descrição deve ter pelo menos 4 caracteres',
+
+            'tipo.required' => 'O campo Tipo é obrigatorio',
+            'tipo.min' => 'O campo Tipo deve ter pelo menos 4 caracteres',
+
+            'valorPrevisto.required' => 'O campo Valor Previsto é obrigatorio',
+            'valorPrevisto.min' => 'O campo Valor Previsto deve ter pelo menos 1 caractere',
+
+            'valorRecebido.required' => 'O campo Valor Recebido é obrigatorio',
+            'valorRecebido.min' => 'O campo Valor Recebido deve ter pelo menos 1 caractere',
+
+            'data.required' => 'O campo Data é obrigatorio',
+            'data.min' => 'O campo Data deve ter pelo menos 2 caracteres',
+            
 
         ];
     }
