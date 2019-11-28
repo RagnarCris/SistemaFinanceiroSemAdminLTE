@@ -2,38 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\OrigemTransacaoFormRequest;
-use App\OrigemTransacao;
 use Illuminate\Http\Request;
 
-class origemTransacaoController extends Controller
+use App\OrigemTransacao;
+
+use App\Http\Requests\OrigemTransacaoFormRequest;
+
+class OrigemTransacaoController extends Controller
 {
-    //
-    public function __construct()
+    public function list(Request $request)
     {
-        $this->middleware('auth');
+        $origens = OrigemTransacao::query()->orderBy('nome')->get();
+        $mensagem = $request->session()->get('mensagem');
+        return view('origem.list', compact('origens', 'mensagem'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function create()
     {
-        return view('/origemTransaçao/cadastroorigemtrans');
+        return view('origem.create');
     }
-    public function listagem(OrigemTransacaoFormRequest $request)
-    {
-        $origemtransacao = OrigemTransacao::query()->orderBy('Nome')->get();
-        $mensagem = $request->session()->get('mensagem');
-        return view('/origemTransaçao/listaorigemtrans', compact('origemtransacao', 'mensagem'));
-    }
+
     public function store(OrigemTransacaoFormRequest $request)
     {
-        $nome = $request->nome;
-        $origemtransacao = OrigemTransacao::create($request->all());
-        $request->session()->flash('mensagem', "Origem da transação {$nome} cadastrada com sucesso");
-        return redirect()->route('listarOrigens');
+        $origem = OrigemTransacao::create($request->all());
+        $request->session()->flash('mensagem', "Origem da Transação {$origem->nome} cadastrada com sucesso");
+        return redirect()->route('listar_origens');
+    }
+
+    public function destroy (Request $request)
+    {
+        OrigemTransacao::destroy($request->id);
+        $request->session()->flash('mensagem', "Origem da Transação removida com sucesso");
+        return redirect()->route('listar_origens');
     }
 }

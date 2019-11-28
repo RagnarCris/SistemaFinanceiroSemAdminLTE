@@ -24,13 +24,12 @@ class TransacaoFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-            'Nome'=> 'required|min:2',
-            'Descrição'=> 'required|min:4',
-            'Tipo'=> 'required|min:2',
-            'ValorPrevisto'=> 'required|min:1',
-            'ValorRecebido'=> 'required|min:1',
-            'Data'=> 'required|min:8',
+            'nome'=> 'required|min:2',
+            'descricao'=> 'required|min:4',
+            'tipo'=> 'required|min:2',
+            'valorPrevisto'=> 'required|min:1',
+            'valorRecebido'=> 'required|min:1',
+            'data'=> 'required|min:8',
 
 
         ];
@@ -38,17 +37,17 @@ class TransacaoFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'Nome.required' => 'O campo nome é obrigatorio',
-            'Nome.min' => 'O campo deve ter no minmo 2 caracteres',
-            'Descrição.required' => 'O campo Descrição é obrigatorio',
-            'Descrição.min' => 'O campo deve ter no minmo 4 caracteres',
-            'Tipo.required' => 'O campo Tipo é obrigatorio',
-            'Tipo.min' => 'O campo deve ter no minmo 2 caracteres',
-            'ValorPrevisto.required' => 'O campo Valor Previsto é obrigatorio',
-            'ValorPrevisto.min' => 'O campo deve ter no minmo 1 caracteres',
-            'ValorRecebido.required' => 'O campo Valor Recebido é obrigatorio',
-            'ValorRecebido.min' => 'O campo deve ter no minmo 1 caracteres',
-            'Data.required' => 'O campo data é obrigatorio',
+            'nome.required' => 'O campo nome é obrigatorio',
+            'nome.min' => 'O campo deve ter no minmo 2 caracteres',
+            'descricao.required' => 'O campo Descrição é obrigatorio',
+            'descricao.min' => 'O campo deve ter no minmo 4 caracteres',
+            'tipo.required' => 'O campo Tipo é obrigatorio',
+            'tipo.min' => 'O campo deve ter no minmo 2 caracteres',
+            'valorPrevisto.required' => 'O campo Valor Previsto é obrigatorio',
+            'valorPrevisto.min' => 'O campo deve ter no minmo 1 caracteres',
+            'valorRecebido.required' => 'O campo Valor Recebido é obrigatorio',
+            'valorRecebido.min' => 'O campo deve ter no minmo 1 caracteres',
+            'data.required' => 'O campo data é obrigatorio',
             'data.min' => 'O campo deve ter no  8 caracteres',
         ];
             }

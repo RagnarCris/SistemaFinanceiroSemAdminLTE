@@ -19,18 +19,15 @@ Produtos
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Descrição</th>
-            <th scope="col">Preço</th>
 
         </tr>
         </thead>
-        @foreach ($produtos as $produto)
+        @foreach ($origens as $origem)
         <tbody>
         <tr>
-            <td scope="row">{{ $produto->id }}</td>
-            <td>  {{ $produto->nome }} </td>
-            <td>{{ $produto->descricao }} </td>
-            <td>{{ $produto->preco }} </td>
-
+            <td scope="row">{{ $origem->id }}</td>
+            <td>  {{ $origem->nome }} </td>
+            <td>{{ $origem->descricao }} </td>
         </tr>
         @endforeach
         </tbody>
