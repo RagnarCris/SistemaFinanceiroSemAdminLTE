@@ -26,14 +26,26 @@ class FornecedorFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'=> 'required|min:2'
+            'nome'=> 'required|min:2',
+            'cnpj'=> 'required|min:2',
+            'telefone'=> 'required|min:2',
+            'endereco'=> 'required|min:2'
         ];
     }
     public function messages()
     {
         return [
-            'nome.required' => 'O campo Nome de Origem é obrigatorio',
-            'nome.min' => 'O campo Nome de Origem deve ter pelo menos 2 caracteres'
+            'nome.required' => 'O campo Nome é obrigatório',
+            'nome.min' => 'O campo Nome deve ter pelo menos 2 caracteres',
+            
+            'cnpj.required' => 'O campo CNPJ é obrigatório',
+            'cnpj.min' => 'O campo CNPJ deve ter pelo menos 2 caracteres',
+
+            'telefone.required' => 'O campo Telefone é obrigatório',
+            'telefone.min' => 'O campo Telefone deve ter pelo menos 2 caracteres',
+
+            'endereco.required' => 'O campo Endereço é obrigatório',
+            'endereco.min' => 'O campo Endereço deve ter pelo menos 2 caracteres'
         ];
     }
 }
