@@ -18,18 +18,19 @@ Produtos
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Preço</th>
-
+            <th scope="col">CNPJ</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Endereço</th>
         </tr>
         </thead>
-        @foreach ($produtos as $produto)
+        @foreach ($fornecedores as $fornecedor)
         <tbody>
         <tr>
-            <td scope="row">{{ $produto->id }}</td>
-            <td>  {{ $produto->nome }} </td>
-            <td>{{ $produto->descricao }} </td>
-            <td>{{ $produto->preco }} </td>
+            <td scope="row">{{ $fornecedor->id }}</td>
+            <td>  {{ $fornecedor->nome }} </td>
+            <td>  {{ $fornecedor->cnpj }} </td>
+            <td>  {{ $fornecedor->telefone }} </td>
+            <td>  {{ $fornecedor->endereco }} </td>
 
         </tr>
         @endforeach

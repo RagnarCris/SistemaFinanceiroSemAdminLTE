@@ -1,7 +1,7 @@
 @extends('layout')
 @section('cabecalho')
 <div class="d-flex justify-content-center p-5">
-Cadastrar Produto
+Cadastrar Serviço
 </div>
 @endsection
 
@@ -20,7 +20,7 @@ Cadastrar Produto
 <form method="post">
     @csrf
     <div class="form-group">
-        <label for="nome">Nome</label>
+        <label for="nome">Nome do Serviço</label>
         <input type="text" class="form-control" name="nome" id="nome">
         <label for="descricao">Descrição</label>
         <input type="text" class="form-control" name="descricao" id="descricao">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CriarTabelaOrigens extends Migration
+class CriarTabelaFornecedores extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CriarTabelaOrigens extends Migration
      */
     public function up()
     {
-        Schema::create('origem_transacaos', function (Blueprint $table) {
+        Schema::create('fornecedors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('descricao');
+            $table->int('cnpj');
+            $table->string('telefone');
+            $table->string('endereco');
         });
     }
 
@@ -27,6 +29,6 @@ class CriarTabelaOrigens extends Migration
      */
     public function down()
     {
-        Schema::drop('origem_transacaos');
+        Schema::drop('fornecedors');
     }
 }

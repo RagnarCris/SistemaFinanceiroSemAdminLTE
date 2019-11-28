@@ -24,20 +24,20 @@ class ServicoFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'Nome' => 'required|min:2', 
-            'Descrição' => 'required|min:4', 
-            'Preço' => 'required',
+            'nome' => 'required|min:2',
+            'descricao' => 'required|min:4',
+            'preco' => 'required',
         ];
     }
     //Função para personalisar as mensagens de validação
     public function messages()
     {
         return [
-            'Nome.required' => 'O campo Nome é obrigatório',
-            'Nome.min' => 'O campo Nome precisa ter pelo menos 2 caracteres',
-            'Preço.required' => 'O campo Preço é obrigatório',
-            'Descrição.required' => 'O campo Descrição é obrigatório',
-            'Descrição.min' => 'O campo Descrição precisa ter pelo menos 4 caracteres'
+            'nome.required' => 'O campo Nome do Serviço é obrigatório',
+            'nome.min' => 'O campo Nome do Serviço precisa ter pelo menos 2 caracteres',
+            'preco.required' => 'O campo Preço é obrigatório',
+            'descricao.required' => 'O campo Descrição é obrigatório',
+            'descricao.min' => 'O campo Descrição precisa ter pelo menos 4 caracteres'
         ];
     }
 }
