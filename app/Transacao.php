@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transacao extends Model
 {
-    //
-    protected $fillable =['Nome','Descrição','Tipo','ValorPrevisto','ValorRecebido','Data'];
+    public $timestamps = false;
+    protected $fillable =['nome','descricao','tipo','valorPrevisto','valorRecebido','data'];
 
     public function cliente()
     {
@@ -19,7 +19,7 @@ class Transacao extends Model
     }
     public function servico()
     {
-        return $this->belongsTo(Serviço::class);
+        return $this->belongsTo(Servico::class);
     }
     public function forncedor()
     {
