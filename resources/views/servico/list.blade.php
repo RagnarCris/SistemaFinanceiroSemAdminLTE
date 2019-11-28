@@ -1,7 +1,7 @@
 @extends('layout')
 @section('cabecalho')
 <div class="d-flex justify-content-center p-5">
-Produtos
+Serviços
 </div>
 @endsection
 
@@ -23,13 +23,13 @@ Produtos
 
         </tr>
         </thead>
-        @foreach ($produtos as $produto)
+        @foreach ($servicos as $servico)
         <tbody>
         <tr>
-            <td scope="row">{{ $produto->id }}</td>
-            <td>  {{ $produto->nome }} </td>
-            <td>{{ $produto->descricao }} </td>
-            <td>{{ $produto->preco }} </td>
+            <td scope="row">{{ $servico->id }}</td>
+            <td>  {{ $servico->nome }} </td>
+            <td>{{ $servico->descricao }} </td>
+            <td>{{ $servico->preco }} </td>
 
         </tr>
         @endforeach

@@ -3,37 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Servico;
+use App\Serviço;
 use Illuminate\Http\Request;
 use App\Http\Requests\ServicoFormRequest;
 
 class servicoController extends Controller
 {
     //
-    public function __construct()
+    public function list(Request $request)
     {
-        $this->middleware('auth');
+        $servicos = Servico::query()->orderBy('nome')->get();
+        $mensagem = $request->session()->get('mensagem');
+        return view('servico.list', compact('servicos', 'mensagem'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function create()
     {
-        return view('/servico/cadastroServico');
+        return view('servico.create');
     }
-    public function listagem(ServicoFormRequest $request)
-    {
-        $servico = Servico::query()->orderBy('Nome')->get();
-        $mensagem = $request->session()->get('mensagem');
-        return view('/servico/ListaServico', compact('servico', 'mensagem'));
-    }
+
     public function store(ServicoFormRequest $request)
     {
-        $nome = $request->nome;
         $servico = Servico::create($request->all());
-        $request->session()->flash('mensagem', "Serviço {$nome} cadastrado com sucesso");
-        return redirect()->route('listarServicos');
+        $request->session()->flash('mensagem', "Serviço {$servico->nome} cadastrado com sucesso");
+        return redirect()->route('listar_servicos');
+    }
+
+    public function destroy (Request $request)
+    {
+        Servico::destroy($request->id);
+        $request->session()->flash('mensagem', "Serviço removido com sucesso");
+        return redirect()->route('listar_servicos');
     }
 }

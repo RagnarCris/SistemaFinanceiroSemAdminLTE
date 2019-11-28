@@ -1,4 +1,4 @@
-@extends('layout')
+ @extends('layout')
 @section('cabecalho')
 <div class="d-flex justify-content-center p-5">
 Cadastrar Transação

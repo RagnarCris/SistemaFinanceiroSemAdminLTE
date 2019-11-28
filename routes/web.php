@@ -62,7 +62,7 @@ Route::post('/origens/criar', 'OrigemTransacaoController@store');
 
 
 #Rotas do fornecedor
-Route::get('/fornecedor', 'FornecedorController@list')->name('listar_fornecedor');
+Route::get('/fornecedor', 'FornecedorController@list')->name('listar_fornecedores');
 
 Route::get('/fornecedor/criar', 'FornecedorController@create')->name('criar_fornecedor');
 

@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fornecedor extends Model
+class Servico extends Model
 {
     public $timestamps = false;
-    protected $fillable =['nome'];
+    protected $fillable =['nome','descricao','preco'];
 
     public function transacao()
     {
