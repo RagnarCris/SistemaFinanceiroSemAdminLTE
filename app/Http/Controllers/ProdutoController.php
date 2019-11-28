@@ -27,7 +27,7 @@ class ProdutoController extends Controller
     {
         $produto = Produto::create($request->all());
         $request->session()->flash('mensagem', "Produto {$produto->nome} cadastrada com sucesso");
-        return redirect()->route('listar_produto');
+        return redirect()->route('listar_produtos');
     }
 
     public function destroy (Request $request)

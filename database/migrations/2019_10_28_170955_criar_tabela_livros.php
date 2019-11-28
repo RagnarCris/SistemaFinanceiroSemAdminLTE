@@ -18,7 +18,6 @@ class CriarTabelaLivros extends Migration
             $table->string('nome');
             $table->string('endereco');
             $table->string('telefone');
-            $table->timestamps();
         });
         
     }
