@@ -17,7 +17,10 @@ Produtos
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome de Origem</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Endereço</th>
         </tr>
         </thead>
         @foreach ($fornecedores as $fornecedor)
@@ -25,6 +28,9 @@ Produtos
         <tr>
             <td scope="row">{{ $fornecedor->id }}</td>
             <td>  {{ $fornecedor->nome }} </td>
+            <td>  {{ $fornecedor->cnpj }} </td>
+            <td>  {{ $fornecedor->telefone }} </td>
+            <td>  {{ $fornecedor->endereco }} </td>
 
         </tr>
         @endforeach
