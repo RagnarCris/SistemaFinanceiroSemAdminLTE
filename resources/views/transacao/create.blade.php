@@ -25,13 +25,13 @@ Cadastrar Transação
         <label for="descricao">Descrição</label>
         <input type="text" class="form-control" name="descricao" id="descricao">
         <label for="preco">Tipo</label>
-        <input type="text" class="form-control" name="preco" id="preco">
+        <input type="text" class="form-control" name="tipo" id="preco">
         <label for="preco">Valor Previsto</label>
-        <input type="text" class="form-control" name="preco" id="preco">
+        <input type="text" class="form-control" name="valorPrevisto" id="preco">
         <label for="preco">Valor Recebido</label>
-        <input type="text" class="form-control" name="preco" id="preco">
+        <input type="text" class="form-control" name="valorRecebido" id="preco">
         <label for="preco">Data</label>
-        <input type="text" class="form-control" name="preco" id="preco">
+        <input type="text" class="form-control" name="data" id="preco">
     </div>
     <button class="btn btn-primary">Adicionar</button>
 </form>

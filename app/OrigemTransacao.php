@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrigemTransacao extends Model
 {
-    //
-    protected $fillable =['Nome','Descrição'];
+    public $timestamps = false;
+    protected $fillable =['nome','descricao'];
 
-    public function Transacao()
+    public function transacao()
     {
         return $this->$this->hasMany(Transacao::class);
     }

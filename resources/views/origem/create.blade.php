@@ -24,8 +24,6 @@ Cadastrar Produto
         <input type="text" class="form-control" name="nome" id="nome">
         <label for="descricao">Descrição</label>
         <input type="text" class="form-control" name="descricao" id="descricao">
-        <label for="preco">Preço</label>
-        <input type="text" class="form-control" name="preco" id="preco">
     </div>
     <button class="btn btn-primary">Adicionar</button>
 </form>

@@ -2,38 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TransacaoFormRequest;
-use App\Transacao;
 use Illuminate\Http\Request;
+
+use App\Transacao;
+
+use App\Http\Requests\TransacaoFormRequest;
+
 
 class transacaoController extends Controller
 {
-    //
-    public function __construct()
+    public function list(Request $request)
     {
-        $this->middleware('auth');
+        $transacoes = Transacao::query()->orderBy('nome')->get();
+        $mensagem = $request->session()->get('mensagem');
+        return view('transacao.list', compact('transacoes', 'mensagem'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function create()
     {
-        return view('/trasacao/cadastroTrans');
+        return view('transacao.create');
     }
-    public function listagem(TransacaoFormRequest $request)
-    {
-        $transacao = Transacao::query()->orderBy('Nome')->get();
-        $mensagem = $request->session()->get('mensagem');
-        return view('/trasacao/teste', compact('transacao', 'mensagem'));
-    }
+
     public function store(TransacaoFormRequest $request)
     {
-        $nome = $request->nome;
         $transacao = Transacao::create($request->all());
-        $request->session()->flash('mensagem', "Transação {$nome} cadastrado com sucesso");
-        return redirect()->route('listarTransacoes');
+        $request->session()->flash('mensagem', "Transacao {$transacao->nome} cadastrada com sucesso");
+        return redirect()->route('listar_transacoes');
+    }
+
+    public function destroy (Request $request)
+    {
+        Transacao::destroy($request->id);
+        $request->session()->flash('mensagem', "Transacao removida com sucesso");
+        return redirect()->route('listar_transacoes');
     }
 }

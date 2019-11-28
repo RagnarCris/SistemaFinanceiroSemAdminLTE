@@ -39,7 +39,12 @@ form{
                     <li class="nav-item active" style="padding: 1% 5% 1% 5%">
                         <a class="nav-link" href="{{ route('criar_produto') }}">Cadastrar Produto <span class="sr-only">(current)</span></a>
                     </li>
-
+                    <li class="nav-item active" style="padding: 1% 5% 1% 5%">
+                        <a class="nav-link" href="{{ route('criar_transacao') }}">Cadastrar Transação <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" style="padding: 1% 5% 1% 5%">
+                        <a class="nav-link" href="{{ route('criar_origem') }}">Cadastrar Origem de Transação <span class="sr-only">(current)</span></a>
+                    </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="/livros/pesquisa">
                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Pesquisar" aria-label="Search">

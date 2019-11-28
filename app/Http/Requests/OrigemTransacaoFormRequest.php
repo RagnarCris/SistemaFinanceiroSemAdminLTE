@@ -24,18 +24,17 @@ class OrigemTransacaoFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-            'Nome'=> 'required|min:2',
-            'Descrição'=> 'required|min:4'
+            'nome'=> 'required|min:2',
+            'descricao'=> 'required|min:4'
         ];
     }
     public function messages()
     {
         return [
-            'Nome.required' => 'O campo nome é obrigatorio',
-            'Nome.min' => 'O campo deve ter no minmo 2 caracteres',
-            'Descrição.required' => 'O campo Descrição é obrigatorio',
-            'Descrição.min' => 'O campo deve ter no minmo 4 caracteres',
+            'nome.required' => 'O campo Nome é obrigatorio',
+            'nome.min' => 'O campo Nome deve ter no minmo 2 caracteres',
+            'descricao.required' => 'O campo Descrição é obrigatorio',
+            'descricao.min' => 'O campo Descrição deve ter no minmo 4 caracteres',
 
         ];
     }
