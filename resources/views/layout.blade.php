@@ -30,16 +30,27 @@ form{
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-0">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active" style="padding: 1% 5% 1% 5%">
+                    <li class="nav-item active" style="padding: 1%">
                         <a class="nav-link" href="{{ route('index_clientes') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active" style="padding: 1% 5% 1% 5%">
+                    <li class="nav-item active" style="padding: 1%">
                         <a class="nav-link" href="{{ route('criar_cliente') }}">Cadastrar Cliente <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active" style="padding: 1% 5% 1% 5%">
+                    <li class="nav-item active" style="padding: 1%">
                         <a class="nav-link" href="{{ route('criar_produto') }}">Cadastrar Produto <span class="sr-only">(current)</span></a>
                     </li>
-
+                    <li class="nav-item active" style="padding: 1%">
+                        <a class="nav-link" href="{{ route('criar_servico') }}">Cadastrar Serviço <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" style="padding: 1%">
+                        <a class="nav-link" href="{{ route('criar_transacao') }}">Cadastrar Transação <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" style="padding: 1%">
+                        <a class="nav-link" href="{{ route('criar_origem') }}">Cadastrar Origem de Transação <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" style="padding: 1%">
+                        <a class="nav-link" href="{{ route('criar_fornecedor') }}">Cadastrar Fornecedor <span class="sr-only">(current)</span></a>
+                    </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="/livros/pesquisa">
                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Pesquisar" aria-label="Search">

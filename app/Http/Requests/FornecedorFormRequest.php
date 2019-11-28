@@ -26,14 +26,13 @@ class FornecedorFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
             'nome'=> 'required|min:2',
             'descricao'=> 'required|min:4',
-            'tipo'=> 'required|min:4'
-            'valorPrevisto'=> 'required|min:1'
-            'valorRecebido'=> 'required|min:1'
+            'tipo'=> 'required|min:4',
+            'valorPrevisto'=>'required|min:1',
+            'valorRecebido'=>'required|min:1',
             'data'=> 'required|min:2'
-            ];
+        ];
     }
     public function messages()
     {
