@@ -36,6 +36,7 @@ Route::get('/produtos', 'ProdutoController@list')->name('listar_produtos');
 Route::get('/produtos/criar', 'ProdutoController@create')->name('criar_produto');
 
 Route::post('/produtos/criar', 'ProdutoController@store');
+
 #Rotas do serviço
 
 
