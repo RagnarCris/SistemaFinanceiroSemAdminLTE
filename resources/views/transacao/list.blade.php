@@ -27,16 +27,16 @@ Transações
 
         </tr>
         </thead>
-        @foreach ($transacoes as $transacao)
+        @foreach ($fornecedor as $fornecedor)
         <tbody>
         <tr>
-            <td scope="row">{{ $transacao->id }}</td>
-            <td>  {{ $transacao->nome }} </td>
-            <td>{{ $transacao->descricao }} </td>
-            <td>{{ $transacao->tipo }} </td>
-            <td>{{ $transacao->valorPrevisto }} </td>
-            <td>{{ $transacao->valorRecebido }} </td>
-            <td>{{ $transacao->data }} </td>
+            <td scope="row">{{ $fornecedor->id }}</td>
+            <td>  {{ $fornecedor->nome }} </td>
+            <td>{{ $fornecedor->descricao }} </td>
+            <td>{{ $fornecedor->tipo }} </td>
+            <td>{{ $fornecedor->valorPrevisto }} </td>
+            <td>{{ $fornecedor->valorRecebido }} </td>
+            <td>{{ $fornecedor->data }} </td>
         </tr>
         @endforeach
         </tbody>

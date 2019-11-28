@@ -12,7 +12,7 @@ class FornecedorController extends Controller
 {
     public function list(Request $request)
     {
-        $fornecedores = Fornecedor::query()->orderBy('nome')->get();
+        $fornecedores = Fornecedor::query()->orderBy('nomeOrigem')->get();
         $mensagem = $request->session()->get('mensagem');
         return view('fornecedor.list', compact('fornecedores', 'mensagem'));
     }
@@ -26,7 +26,7 @@ class FornecedorController extends Controller
     public function store(FornecedorFormRequest $request)
     {
         $fornecedor = Fornecedor::create($request->all());
-        $request->session()->flash('mensagem', "Fornecedor {$fornecedor->nome} cadastrada com sucesso");
+        $request->session()->flash('mensagem', "Fornecedor {$fornecedor->nomeOrigem} cadastrada com sucesso");
         return redirect()->route('listar_fornecedores');
     }
 
