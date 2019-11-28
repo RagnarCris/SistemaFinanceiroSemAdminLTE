@@ -1,7 +1,7 @@
 @extends('layout')
 @section('cabecalho')
 <div class="d-flex justify-content-center p-5">
-Produtos
+Transações
 </div>
 @endsection
 
@@ -19,18 +19,24 @@ Produtos
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Descrição</th>
-            <th scope="col">Preço</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Valor Previsto</th>
+            <th scope="col">Valor Recebido</th>
+            <th scope="col">Data</th>
+            
 
         </tr>
         </thead>
-        @foreach ($produtos as $produto)
+        @foreach ($transacoes as $transacao)
         <tbody>
         <tr>
-            <td scope="row">{{ $produto->id }}</td>
-            <td>  {{ $produto->nome }} </td>
-            <td>{{ $produto->descricao }} </td>
-            <td>{{ $produto->preco }} </td>
-
+            <td scope="row">{{ $transacao->id }}</td>
+            <td>  {{ $transacao->nome }} </td>
+            <td>{{ $transacao->descricao }} </td>
+            <td>{{ $transacao->tipo }} </td>
+            <td>{{ $transacao->valorPrevisto }} </td>
+            <td>{{ $transacao->valorRecebido }} </td>
+            <td>{{ $transacao->data }} </td>
         </tr>
         @endforeach
         </tbody>

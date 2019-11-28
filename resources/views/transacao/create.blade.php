@@ -1,7 +1,7 @@
 @extends('layout')
 @section('cabecalho')
 <div class="d-flex justify-content-center p-5">
-Cadastrar Produto
+Cadastrar Transação
 </div>
 @endsection
 
@@ -24,7 +24,13 @@ Cadastrar Produto
         <input type="text" class="form-control" name="nome" id="nome">
         <label for="descricao">Descrição</label>
         <input type="text" class="form-control" name="descricao" id="descricao">
-        <label for="preco">Preço</label>
+        <label for="preco">Tipo</label>
+        <input type="text" class="form-control" name="preco" id="preco">
+        <label for="preco">Valor Previsto</label>
+        <input type="text" class="form-control" name="preco" id="preco">
+        <label for="preco">Valor Recebido</label>
+        <input type="text" class="form-control" name="preco" id="preco">
+        <label for="preco">Data</label>
         <input type="text" class="form-control" name="preco" id="preco">
     </div>
     <button class="btn btn-primary">Adicionar</button>
