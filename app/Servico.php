@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Serviço extends Model
+class Servico extends Model
 {
-    //
-    protected $fillable =['Nome','Descrição','Preço'];
+    public $timestamps = false;
+    protected $fillable =['nome','descricao','preco'];
 
     public function Transacao()
     {
